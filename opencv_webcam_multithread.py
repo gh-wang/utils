@@ -25,14 +25,12 @@ class WebcamVideoStream :
     def update(self) :
         while self.started :
             (grabbed, frame) = self.stream.read()
-            self.read_lock.acquire()
-            self.grabbed, self.frame = grabbed, frame
-            self.read_lock.release()
+            with self.read_lock:
+                self.grabbed, self.frame = grabbed, frame
 
     def read(self) :
-        self.read_lock.acquire()
-        frame = self.frame.copy()
-        self.read_lock.release()
+        with self.read_lock:
+            frame = self.frame.copy()
         return frame
 
     def stop(self) :
