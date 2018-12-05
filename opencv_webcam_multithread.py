@@ -50,8 +50,5 @@ if __name__ == "__main__" :
         if key == ord("q"):
             break
 
-        if cv2.waitKey(1) == 27 :
-            break
-
     vs.stop()
     cv2.destroyAllWindows()
