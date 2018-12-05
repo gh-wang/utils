@@ -5,17 +5,17 @@ from threading import Thread, Lock
 import cv2
 
 class WebcamVideoStream :
-    def __init__(self, src = 0, width = 320, height = 240) :
+    def __init__(self, src = 0, width = 640, height = 480) :
         self.stream = cv2.VideoCapture(src)
-        self.stream.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, width)
-        self.stream.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, height)
+        self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, width)  # modified for opencv v3.4.3
+        self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
         (self.grabbed, self.frame) = self.stream.read()
         self.started = False
         self.read_lock = Lock()
 
     def start(self) :
         if self.started :
-            print "already started!!"
+            print("already started!")
             return None
         self.started = True
         self.thread = Thread(target=self.update, args=())
