@@ -45,6 +45,11 @@ if __name__ == "__main__" :
     while True :
         frame = vs.read()
         cv2.imshow('webcam', frame)
+        
+        key = cv2.waitKey(1) & 0xFF
+        if key == ord("q"):
+            break
+
         if cv2.waitKey(1) == 27 :
             break
 
