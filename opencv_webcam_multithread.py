@@ -7,7 +7,7 @@ import cv2
 class WebcamVideoStream :
     def __init__(self, src = 0, width = 640, height = 480) :
         self.stream = cv2.VideoCapture(src)
-        self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, width)  # modified for opencv v3.4.3
+        self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, width)  # modified for opencv v3
         self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
         (self.grabbed, self.frame) = self.stream.read()
         self.started = False
