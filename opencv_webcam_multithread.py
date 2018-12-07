@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # From https://gist.github.com/allskyee/7749b9318e914ca45eb0a1000a81bf56
+# This works for USB camera. Not for the Raspberry Pi Camera.
 
 from threading import Thread, Lock
 import cv2
 
 class WebcamVideoStream :
-    def __init__(self, src = 0, width = 640, height = 480) :
+    def __init__(self, src=0, width=640, height=480) :
         self.stream = cv2.VideoCapture(src)
         self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, width)  # modified for opencv v3
         self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
