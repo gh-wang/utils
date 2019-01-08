@@ -88,7 +88,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D WITH_LIBV4L=ON ..
 
 # increase SWAP space size from CONF_SWAPSIZE=100 to 2048
-sudo sed -i 's/E=100/E=2048/g' /etc/dphys-swapfile
+sudo sed -i 's/CONF_SWAPSIZE=100/CONF_SWAPSIZE=2048/g' /etc/dphys-swapfile
+
 # restart the swap service
 sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
@@ -99,7 +100,8 @@ sudo make install
 sudo ldconfig
 
 # restore SWAP space size to CONF_SWAPSIZE=100
-sudo sed -i 's/E=2048/E=100/g' /etc/dphys-swapfile
+sudo sed -i 's/CONF_SWAPSIZE=2048/CONF_SWAPSIZE=100/g' /etc/dphys-swapfile
+
 # restart the swap service
 sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
