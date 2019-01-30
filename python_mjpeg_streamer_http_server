@@ -1,8 +1,8 @@
 #!/usr/bin/python
 '''
-	Author: Igor Maculan - n3wtron@gmail.com
+    Original Author: Igor Maculan - n3wtron@gmail.com
     A Simple mjpg stream http server
-    link: https://gist.github.com/n3wtron/4624820
+    Fork from: https://gist.github.com/n3wtron/4624820
 '''
 import cv2
 import Image
