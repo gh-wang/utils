@@ -25,11 +25,15 @@
 # OpenCV Version
 VERSION='3.4.3'
 
+# ---------------------------------------------------------
 # 1. KEEP SYSTEM UP TO DATE
+# ---------------------------------------------------------
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
+# ---------------------------------------------------------
 # 2. INSTALL THE DEPENDENCIES
+# ---------------------------------------------------------
 
 # Build tools:
 sudo apt-get install -y build-essential cmake unzip pkg-config
@@ -48,7 +52,9 @@ sudo apt-get install -y libcanberra-gtk*
 # Matrix operation libraries:
 sudo apt-get install -y libatlas-base-dev gfortran
 
-# Python3:
+# ---------------------------------------------------------
+# 3. Python3 UPDATE
+# ---------------------------------------------------------
 sudo apt-get install -y python3-dev
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
@@ -57,7 +63,9 @@ sudo python3 get-pip.py
 # To make MJPG-Streamer happy you have to create a symbolic link by
 sudo ln -s /usr/include/linux/videodev2.h /usr/include/linux/videodev.h
 
-# 3. INSTALL THE LIBRARY
+# ---------------------------------------------------------
+# 4. INSTALL OPENCV
+# ---------------------------------------------------------
 
 # create opencv folder
 cd ~
